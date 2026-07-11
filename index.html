@@ -3,67 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Futebol Brasileiro</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
+    <meta name="description" content="Quiz interativo de Futebol Brasileiro — teste seus conhecimentos!">
+    <title>Quiz de Futebol Brasileiro ⚽</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Quiz de Futebol Brasileiro</h1>
-    <form id="quizForm"><br/>
-        <div>
-            <label for="q1">1. Qual é o clube com mais títulos do Campeonato Brasileiro?</label><br>
-            <input type="radio" id="q1a" name="q1" value="Palmeiras">
-            <label for="q1a">Palmeiras</label><br>
-            <input type="radio" id="q1b" name="q1" value="Flamengo">
-            <label for="q1b">Flamengo</label><br>
-            <input type="radio" id="q1c" name="q1" value="São Paulo">
-            <label for="q1c">São Paulo</label><br>
-            <input type="radio" id="q1d" name="q1" value="Santos">
-            <label for="q1d">Santos</label>
-        </div><br/>
-        <div>
-            <label for="q2">2. Quem é o maior artilheiro da história do Campeonato Brasileiro?</label><br>
-            <input type="radio" id="q2a" name="q2" value="Roberto Dinamite">
-            <label for="q2a">Roberto Dinamite</label><br>
-            <input type="radio" id="q2b" name="q2" value="Romário">
-            <label for="q2b">Romário</label><br>
-            <input type="radio" id="q2c" name="q2" value="Zico">
-            <label for="q2c">Zico</label><br>
-            <input type="radio" id="q2d" name="q2" value="Pelé">
-            <label for="q2d">Pelé</label>
-        </div><br/>
-        <div>
-            <label for="q3">3. Qual seleção  tem mais Copas do Mundo?</label><br>
-            <input type="radio" id="q3a" name="q3" value="3">
-            <label for="q3a">Argentina</label><br>
-            <input type="radio" id="q3b" name="q3" value="4">
-            <label for="q3b">Italia</label><br>
-            <input type="radio" id="q3c" name="q3" value="5">
-            <label for="q3c">Brasil</label><br>
-            <input type="radio" id="q3d" name="q3" value="6">
-            <label for="q3d">Espanha</label>
-        </div><br/>
-        <div>
-            <label for="q4">4. Quem é o jogador brasileiro com mais gols na história das Copas do Mundo?</label><br>
-            <input type="radio" id="q4a" name="q4" value="Ronaldo">
-            <label for="q4a">Ronaldo</label><br>
-            <input type="radio" id="q4b" name="q4" value="Pelé">
-            <label for="q4b">Pelé</label><br>
-            <input type="radio" id="q4c" name="q4" value="Romário">
-            <label for="q4c">Romário</label><br>
-            <input type="radio" id="q4d" name="q4" value="Rivaldo">
-            <label for="q4d">Rivaldo</label>
-        </div><br/>
-        <div>
-            <label for="q5">5. Qual é o estádio mais famoso do Brasil?</label><br>
-            <input type="radio" id="q5a" name="q5" value="Maracanã">
-            <label for="q5a">Maracanã</label><br>
-            <input type="radio" id="q5b" name="q5" value="Mineirão">
-            <label for="q5b">Mineirão</label><br>
-        </div><br/>
+    <main class="app">
 
-        
-        <a href="gabarito.html">Ver Gabarito</a>
+        <!-- Tela inicial -->
+        <section id="start-screen" class="card screen active">
+            <div class="ball-icon">⚽</div>
+            <h1>Quiz de Futebol<br>Brasileiro</h1>
+            <p class="subtitle">Teste seus conhecimentos sobre o futebol do Brasil em 8 perguntas!</p>
+            <button id="start-btn" class="btn btn-primary">Começar o Quiz</button>
+            <a href="gabarito.html" class="link-gabarito">Ver Gabarito</a>
+        </section>
 
-  
-</body> 
-</html>         
+        <!-- Tela do quiz -->
+        <section id="quiz-screen" class="card screen">
+            <header class="quiz-header">
+                <span id="question-counter" class="counter">Pergunta 1 de 8</span>
+                <span id="score-live" class="score-pill">⭐ 0</span>
+            </header>
+            <div class="progress-track">
+                <div id="progress-bar" class="progress-fill"></div>
+            </div>
+            <h2 id="question-text">Carregando pergunta...</h2>
+            <div id="options" class="options"></div>
+            <button id="next-btn" class="btn btn-primary hidden">Próxima →</button>
+        </section>
+
+        <!-- Tela de resultado -->
+        <section id="result-screen" class="card screen">
+            <div id="result-emoji" class="ball-icon">🏆</div>
+            <h1 id="result-title">Fim de jogo!</h1>
+            <p id="result-score" class="result-score">Você acertou 0 de 8</p>
+            <p id="result-message" class="subtitle"></p>
+            <button id="restart-btn" class="btn btn-primary">🔄 Reiniciar Quiz</button>
+            <a href="gabarito.html" class="link-gabarito">Ver Gabarito</a>
+        </section>
+
+    </main>
+
+    <footer class="footer">Feito com ⚽ para os apaixonados por futebol</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
